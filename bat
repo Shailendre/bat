@@ -9,12 +9,12 @@ while [ true ]; do
 #discharge state
 if [ $percentage -le 10 -a $state == 'discharging' ]; then
     #play the alert sound
-    aplay /bin/beep-05.wav;
+    aplay -q /bin/beep-05.wav;
 fi
 #charged state
 if [ $percentage -eq 100 -a $state == 'fully-charged' ]; then
     #play the alert sound
-    aplay /bin/beep-05.wav;
+    aplay -q /bin/beep-05.wav;
 fi
 
 sleep 15;
