@@ -1,0 +1,42 @@
+From c1993736af7622d358f0afe2e88c03673c67c57d Mon Sep 17 00:00:00 2001
+From: Shailendre <goforsunny1993@gmail.com>
+Date: Thu, 19 May 2016 12:29:02 +0530
+Subject: [PATCH] Modified the code according to new directory structure
+
+---
+ README.md  | 2 +-
+ script/bat | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/README.md b/README.md
+index 3d881dd..539f57f 100644
+--- a/README.md
++++ b/README.md
+@@ -1,4 +1,4 @@
+ # bat
+ This is battery status cmd for (x)buntu based os for bash only.
+ # how to run
+-`bat &`
++'sh script/bat &`
+diff --git a/script/bat b/script/bat
+index 60e5fe7..38270d6 100755
+--- a/script/bat
++++ b/script/bat
+@@ -9,12 +9,12 @@ while [ true ]; do
+ #discharge state
+ if [ $percentage -le 10 -a $state == 'discharging' ]; then
+     #play the alert sound
+-    aplay -q admin.wav;
++    aplay -q ../media/admin.wav;
+ fi
+ #charged state
+ if [ $percentage -eq 100 -a $state == 'fully-charged' ]; then
+     #play the alert sound
+-    aplay -q admin.wav;
++    aplay -q ../media/admin.wav;
+ fi
+ 
+ sleep 15;
+-- 
+2.7.4
+
